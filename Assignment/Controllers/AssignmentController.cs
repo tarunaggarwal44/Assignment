@@ -11,14 +11,13 @@ namespace Assignment.Controllers
     {
 
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(string startDate, string endDate)
         {
             AssignmentService assignmentService = new AssignmentService();
-            var response = await assignmentService.GetResponse();
+            var response = await assignmentService.GetResponse(startDate, endDate);
 
             return this.Ok(response);
         }
 
-     
     }
 }
